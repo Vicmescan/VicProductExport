@@ -1,6 +1,8 @@
 # VicProductExport — Shopware 6 Product Export to Excel
 
 A Shopware 6 plugin that lets you export products to `.xlsx` directly from the admin panel. Choose exactly which fields to include, reorder the columns by drag-and-drop, and filter by status or stock.
+<img width="1003" height="784" alt="Captura desde 2026-05-12 13-09-53" src="https://github.com/user-attachments/assets/948b8926-5467-4866-9771-390a63105a90" />
+<img width="1544" height="883" alt="Captura desde 2026-05-12 13-09-11" src="https://github.com/user-attachments/assets/62de167e-4c05-46ad-98e7-8aafbc261f38" />
 
 ---
 
