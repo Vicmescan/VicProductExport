@@ -1,0 +1,148 @@
+{% block vic_product_export_page %}
+<sw-page class="vic-product-export-page">
+
+    {% block vic_product_export_smart_bar_header %}
+    <template #smart-bar-header>
+        <h2>{{ $tc('vic-product-export.page.title') }}</h2>
+    </template>
+    {% endblock %}
+
+    {% block vic_product_export_smart_bar_actions %}
+    <template #smart-bar-actions>
+        <sw-button
+            variant="primary"
+            size="default"
+            :isLoading="isLoading"
+            :disabled="!canExport"
+            @click="onExport">
+            {{ $tc('vic-product-export.page.exportButton') }}
+        </sw-button>
+    </template>
+    {% endblock %}
+
+    {% block vic_product_export_content %}
+    <template #content>
+        <div class="vic-product-export-page__content">
+
+            {% block vic_product_export_success_banner %}
+            <sw-alert v-if="exportSuccess" variant="success" :closable="true" @close="exportSuccess = false">
+                {{ $tc('vic-product-export.page.successMessage') }}
+            </sw-alert>
+            {% endblock %}
+
+            {% block vic_product_export_fields_card %}
+            <sw-card :title="$tc('vic-product-export.page.fieldsTitle')" class="vic-product-export-page__card">
+
+                <div class="vic-product-export-page__fields-actions">
+                    <sw-button size="small" @click="selectAll">
+                        {{ $tc('vic-product-export.page.selectAll') }}
+                    </sw-button>
+                    <sw-button size="small" @click="selectNone">
+                        {{ $tc('vic-product-export.page.selectNone') }}
+                    </sw-button>
+                </div>
+
+                {% block vic_product_export_field_groups %}
+                <div v-for="group in fieldGroups" :key="group.key" class="vic-product-export-page__group">
+                    <p class="vic-product-export-page__group-label">{{ $tc(group.labelKey) }}</p>
+                    <div class="vic-product-export-page__fields-grid">
+                        <div
+                            v-for="field in fieldsInGroup(group.key)"
+                            :key="field.id"
+                            class="vic-product-export-page__field-item">
+                            <sw-checkbox-field
+                                :label="$tc(field.labelKey)"
+                                :modelValue="isFieldSelected(field.id)"
+                                @update:modelValue="onFieldChange(field.id, $event)" />
+                        </div>
+                    </div>
+                </div>
+                {% endblock %}
+
+                {% block vic_product_export_custom_fields %}
+                <div v-if="isLoadingCustomFields" class="vic-product-export-page__group">
+                    <sw-loader size="24px" />
+                </div>
+
+                <div v-if="!isLoadingCustomFields && customFieldSets.length > 0">
+                    <div
+                        v-for="set in customFieldSets"
+                        :key="set.id"
+                        class="vic-product-export-page__group">
+                        <p class="vic-product-export-page__group-label vic-product-export-page__group-label--custom">
+                            {{ $tc('vic-product-export.groups.custom') }}: {{ set.label }}
+                        </p>
+                        <div class="vic-product-export-page__fields-grid">
+                            <div
+                                v-for="field in set.fields"
+                                :key="field.key"
+                                class="vic-product-export-page__field-item">
+                                <sw-checkbox-field
+                                    :label="field.label"
+                                    :modelValue="isFieldSelected('custom:' + field.key)"
+                                    @update:modelValue="onFieldChange('custom:' + field.key, $event)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endblock %}
+
+            </sw-card>
+            {% endblock %}
+
+            {% block vic_product_export_order_card %}
+            <sw-card
+                v-if="selectedFields.length > 0"
+                :title="$tc('vic-product-export.page.orderTitle')"
+                class="vic-product-export-page__card">
+
+                <p class="vic-product-export-page__order-hint">{{ $tc('vic-product-export.page.orderHint') }}</p>
+
+                <div class="vic-product-export-page__sort-list">
+                    <div
+                        v-for="(fieldId, index) in selectedFields"
+                        :key="fieldId"
+                        class="vic-product-export-page__sort-item"
+                        draggable="true"
+                        @dragstart="onDragStart(index)"
+                        @dragover="onDragOver($event, index)"
+                        @dragend="onDragEnd">
+                        <span class="vic-product-export-page__sort-number">{{ index + 1 }}</span>
+                        <span class="vic-product-export-page__sort-handle">⠿</span>
+                        <span class="vic-product-export-page__sort-label">{{ getFieldLabel(fieldId) }}</span>
+                        <sw-button
+                            size="x-small"
+                            variant="ghost"
+                            square
+                            @click="onFieldChange(fieldId, false)">
+                            ✕
+                        </sw-button>
+                    </div>
+                </div>
+
+            </sw-card>
+            {% endblock %}
+
+            {% block vic_product_export_filters_card %}
+            <sw-card :title="$tc('vic-product-export.page.filtersTitle')" class="vic-product-export-page__card">
+                <div class="vic-product-export-page__filters">
+                    <sw-switch-field
+                        :label="$tc('vic-product-export.page.onlyActive')"
+                        v-model:value="filters.onlyActive" />
+
+                    <sw-number-field
+                        :label="$tc('vic-product-export.page.minStock')"
+                        v-model:value="filters.minStock"
+                        :min="0"
+                        :digits="0"
+                        class="vic-product-export-page__filter-stock" />
+                </div>
+            </sw-card>
+            {% endblock %}
+
+        </div>
+    </template>
+    {% endblock %}
+
+</sw-page>
+{% endblock %}

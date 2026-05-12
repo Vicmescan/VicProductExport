@@ -1,0 +1,57 @@
+{
+    "vic-product-export": {
+        "general": {
+            "title": "Product Export",
+            "description": "Export products to Excel",
+            "menuLabel": "Export to Excel"
+        },
+        "page": {
+            "title": "Export Products to Excel",
+            "exportButton": "Export .xlsx",
+            "fieldsTitle": "Select fields to export",
+            "orderTitle": "Column order",
+            "orderHint": "Drag rows to change the column order in the exported file.",
+            "filtersTitle": "Filters",
+            "selectAll": "Select all",
+            "selectNone": "Deselect all",
+            "onlyActive": "Only active products",
+            "minStock": "Minimum stock",
+            "successMessage": "Export complete. The file download has started."
+        },
+        "groups": {
+            "basic": "Basic",
+            "identity": "Identity",
+            "relations": "Relations",
+            "dimensions": "Dimensions",
+            "purchase": "Purchase settings",
+            "content": "Content",
+            "custom": "Custom fields"
+        },
+        "fields": {
+            "name": "Name",
+            "productNumber": "SKU",
+            "price": "Price (gross)",
+            "purchasePrice": "Purchase price",
+            "stock": "Stock",
+            "availableStock": "Available stock",
+            "active": "Active",
+            "ean": "EAN",
+            "releaseDate": "Release date",
+            "markAsTopseller": "Topseller",
+            "shippingFree": "Shipping free",
+            "manufacturer": "Manufacturer",
+            "categories": "Categories",
+            "tags": "Tags",
+            "tax": "Tax rate (%)",
+            "deliveryTime": "Delivery time",
+            "weight": "Weight (kg)",
+            "height": "Height (cm)",
+            "width": "Width (cm)",
+            "length": "Length (cm)",
+            "minPurchase": "Min. purchase",
+            "maxPurchase": "Max. purchase",
+            "description": "Description",
+            "properties": "Properties"
+        }
+    }
+}

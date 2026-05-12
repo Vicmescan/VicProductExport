@@ -1,0 +1,57 @@
+{
+    "vic-product-export": {
+        "general": {
+            "title": "Produkt-Export",
+            "description": "Produkte als Excel exportieren",
+            "menuLabel": "Excel-Export"
+        },
+        "page": {
+            "title": "Produkte als Excel exportieren",
+            "exportButton": ".xlsx exportieren",
+            "fieldsTitle": "Felder auswählen",
+            "orderTitle": "Spaltenreihenfolge",
+            "orderHint": "Zeilen ziehen, um die Spaltenreihenfolge in der exportierten Datei zu ändern.",
+            "filtersTitle": "Filter",
+            "selectAll": "Alle auswählen",
+            "selectNone": "Alle abwählen",
+            "onlyActive": "Nur aktive Produkte",
+            "minStock": "Mindestbestand",
+            "successMessage": "Export abgeschlossen. Der Datei-Download wurde gestartet."
+        },
+        "groups": {
+            "basic": "Grunddaten",
+            "identity": "Identifikation",
+            "relations": "Verknüpfungen",
+            "dimensions": "Abmessungen",
+            "purchase": "Kaufeinstellungen",
+            "content": "Inhalt",
+            "custom": "Zusatzfelder"
+        },
+        "fields": {
+            "name": "Name",
+            "productNumber": "Artikelnummer",
+            "price": "Preis (Brutto)",
+            "purchasePrice": "Einkaufspreis",
+            "stock": "Bestand",
+            "availableStock": "Verfügbarer Bestand",
+            "active": "Aktiv",
+            "ean": "EAN",
+            "releaseDate": "Erscheinungsdatum",
+            "markAsTopseller": "Topseller",
+            "shippingFree": "Versandkostenfrei",
+            "manufacturer": "Hersteller",
+            "categories": "Kategorien",
+            "tags": "Tags",
+            "tax": "Steuersatz (%)",
+            "deliveryTime": "Lieferzeit",
+            "weight": "Gewicht (kg)",
+            "height": "Höhe (cm)",
+            "width": "Breite (cm)",
+            "length": "Länge (cm)",
+            "minPurchase": "Mindestbestellmenge",
+            "maxPurchase": "Maximalbestellmenge",
+            "description": "Beschreibung",
+            "properties": "Eigenschaften"
+        }
+    }
+}

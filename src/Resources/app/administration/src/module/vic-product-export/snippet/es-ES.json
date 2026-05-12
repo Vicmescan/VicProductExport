@@ -1,0 +1,57 @@
+{
+    "vic-product-export": {
+        "general": {
+            "title": "Exportar productos",
+            "description": "Exporta productos a Excel",
+            "menuLabel": "Exportar a Excel"
+        },
+        "page": {
+            "title": "Exportar productos a Excel",
+            "exportButton": "Exportar .xlsx",
+            "fieldsTitle": "Seleccionar campos a exportar",
+            "orderTitle": "Orden de columnas",
+            "orderHint": "Arrastra las filas para cambiar el orden de las columnas en el archivo exportado.",
+            "filtersTitle": "Filtros",
+            "selectAll": "Seleccionar todo",
+            "selectNone": "Deseleccionar todo",
+            "onlyActive": "Solo productos activos",
+            "minStock": "Stock mínimo",
+            "successMessage": "Exportación completada. La descarga del archivo ha comenzado."
+        },
+        "groups": {
+            "basic": "Datos básicos",
+            "identity": "Identificación",
+            "relations": "Relaciones",
+            "dimensions": "Dimensiones",
+            "purchase": "Configuración de compra",
+            "content": "Contenido",
+            "custom": "Campos personalizados"
+        },
+        "fields": {
+            "name": "Nombre",
+            "productNumber": "SKU",
+            "price": "Precio (PVP)",
+            "purchasePrice": "Precio de coste",
+            "stock": "Stock",
+            "availableStock": "Stock disponible",
+            "active": "Activo",
+            "ean": "EAN",
+            "releaseDate": "Fecha de lanzamiento",
+            "markAsTopseller": "Topseller",
+            "shippingFree": "Envío gratuito",
+            "manufacturer": "Fabricante",
+            "categories": "Categorías",
+            "tags": "Etiquetas",
+            "tax": "Tipo impositivo (%)",
+            "deliveryTime": "Plazo de entrega",
+            "weight": "Peso (kg)",
+            "height": "Alto (cm)",
+            "width": "Ancho (cm)",
+            "length": "Largo (cm)",
+            "minPurchase": "Compra mínima",
+            "maxPurchase": "Compra máxima",
+            "description": "Descripción",
+            "properties": "Propiedades"
+        }
+    }
+}
